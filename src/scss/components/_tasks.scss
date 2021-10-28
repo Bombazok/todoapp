@@ -1,3 +1,27 @@
 .tasks {
 	width: 60vw;
+
+	&__form {
+		margin-top: 2vw;
+
+		input {
+			width: 78%;
+			margin-right: 4%;
+
+			@include mobile {
+				width: 100%;
+				margin-right: 0;
+			}
+		}
+
+		button {
+			width: 18%;
+			margin: 0;
+
+			@include mobile {
+				width: auto;
+				margin-top: 2vw;
+			}
+		}
+	}
 }

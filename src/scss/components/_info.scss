@@ -6,4 +6,10 @@
 	&__empty {
 		opacity: 0;
 	}
+
+	&__form {
+		input {
+			width: 100%;
+		}
+	}
 }
