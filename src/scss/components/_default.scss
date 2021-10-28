@@ -1,0 +1,158 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font: $regular $px24 $roboto;
+	color: $white;
+	overflow-x: hidden;
+}
+
+img {
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+	padding: 1.5vw 0.5vw;
+	color: inherit;
+}
+
+p {
+	font-size: $px18;
+	font-weight: $regular;
+	margin: 0.5vw 0;
+
+	@include mobile {
+		font-size: $px18-mob;
+	}
+}
+
+h1 {
+	font-size: $px26;
+	font-weight: $bold;
+	color: $red;
+	margin: 0;
+
+	@include mobile {
+		font-size: $px26-mob;
+	}
+}
+
+h2 {
+	font-size: $px24;
+	font-weight: $bold;
+	margin: 0;
+
+	@include mobile {
+		font-size: $px24-mob;
+	}
+}
+
+button {
+	border-radius: 10px;
+	background-color: $blue-deep;
+	font-weight: $bold;
+	font-family: $roboto;
+	font-size: $px24;
+	color: $white;
+	outline: none;
+	border: none;
+	padding: 10px 15px;
+	cursor: pointer;
+
+	@include mobile {
+		font-size: $px24-mob;
+		border-radius: 5vw;
+		padding: 4.5vw 6.5vw;
+	}
+}
+
+svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+iframe {
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+.h-full {
+	height: 100%;
+}
+
+.w-full {
+	width: 100%;
+}
+
+.wh-full,
+.hw-full {
+	width: 100%;
+	height: 100%;
+}
+
+.overflow-x {
+	overflow-x: hidden;
+}
+
+.overflow-y {
+	overflow-y: hidden;
+}
+
+.overflow {
+	overflow: hidden;
+}
+
+.inline {
+	display: inline !important;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.desktop {
+	@include mobile {
+		display: none !important;
+	}
+}
+
+.mobile {
+	@include desktop {
+		display: none !important;
+	}
+}
+
+.desktop-hidden {
+	@include desktop {
+		display: none !important;
+	}
+}
+
+.mobile-hidden {
+	@include mobile {
+		display: none !important;
+	}
+}
+
+.relative {
+	position: relative;
+}
+
+.absolute {
+	position: absolute;
+}
+
+.fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+[class*="container"] {
+	width: $container;
+}
