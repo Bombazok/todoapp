@@ -5,7 +5,9 @@ function Task({ taskData, data, setData }) {
 
 	return (
 		<div className="task" onClick={clickHandle}>
-			<p>{taskData.title}</p>
+			<p>
+				{taskData.title} {taskData.completed ? " [Completed]" : ""}
+			</p>
 		</div>
 	);
 }
