@@ -28,9 +28,20 @@ p {
 	font-size: $px18;
 	font-weight: $regular;
 	margin: 0.5vw 0;
+	background-color: $light-grey;
+	padding: 1.5vw;
+	border-radius: 1.5vw;
+	margin-bottom: 1vw;
+	cursor: pointer;
+	opacity: 0.85;
+	transition: opacity 0.2s ease;
+
+	&:hover {
+		opacity: 1;
+	}
 
 	@include mobile {
-		font-size: $px18-mob;
+		font-size: $px24-mob;
 	}
 }
 
@@ -55,22 +66,67 @@ h2 {
 	}
 }
 
-button {
+button,
+.button {
 	border-radius: 10px;
 	background-color: $blue-deep;
 	font-weight: $bold;
 	font-family: $roboto;
-	font-size: $px24;
+	font-size: 1.7vw;
 	color: $white;
 	outline: none;
 	border: none;
 	padding: 10px 15px;
 	cursor: pointer;
+	margin: 2vw 2vw 0 0;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&__complete {
+		background-color: $green;
+	}
+
+	&__remove {
+		background-color: $red;
+	}
+
+	opacity: 0.85;
+	transition: opacity 0.2s ease;
+
+	&:hover {
+		opacity: 1;
+	}
+
+	@include mobile {
+		width: auto;
+		font-size: $px24-mob;
+		border-radius: 5vw;
+		margin: 2vw 2vw 0 0;
+	}
+}
+
+input {
+	font-family: $roboto;
+	font-size: $px24;
+	border: none;
+	border-radius: 0.5vw;
+	padding: 2vw;
+	outline: none;
 
 	@include mobile {
 		font-size: $px24-mob;
-		border-radius: 5vw;
-		padding: 4.5vw 6.5vw;
+	}
+
+	&::placeholder {
+		font-family: $roboto;
+		color: $blue-deep-2;
+		font-size: $px24;
+
+		@include mobile {
+			font-size: $px24-mob;
+		}
 	}
 }
 
