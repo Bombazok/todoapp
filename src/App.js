@@ -1,5 +1,7 @@
+import Home from "./jsx/pages/home";
+
 function App() {
-	return <div className="home"></div>;
+	return <Home />;
 }
 
 export default App;
