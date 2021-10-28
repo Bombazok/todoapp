@@ -9,6 +9,11 @@ body {
 	overflow-x: hidden;
 }
 
+#root {
+	background-color: $grey;
+	height: 100vh;
+}
+
 img {
 	width: 100%;
 }
