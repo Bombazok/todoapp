@@ -9,6 +9,8 @@ function Tasks({ data, setData }) {
 		let newTasksArray = data.tasks || [];
 		let newID = -1;
 
+		if (title === "") return;
+
 		data.tasks?.forEach((task) => {
 			if (task.ID > newID) {
 				newID = task.ID;
@@ -23,6 +25,10 @@ function Tasks({ data, setData }) {
 		setData({ ...data, tasks: newTasksArray, currentTaskID: newID });
 	};
 
+	data?.tasks
+		?.sort((prev, next) => prev.title.localeCompare(next.title))
+		.reverse();
+
 	return (
 		<div className="tasks">
 			{data.tasks?.map((task, index) => {
@@ -36,7 +42,7 @@ function Tasks({ data, setData }) {
 				);
 			})}
 
-			<form onSubmit={addTask}>
+			<form onSubmit={addTask} className="tasks__form jcfs-aic wrap">
 				<input type="text" name="title" placeholder="Type here" />
 
 				<button>Add task</button>
