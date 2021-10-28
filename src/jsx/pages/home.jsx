@@ -4,24 +4,32 @@ import Tasks from "../components/tasks";
 import Info from "../components/info";
 
 function Home() {
-	const [currentTask, setCurrentTask] = useState(null);
-	const [data, setData] = useState(null);
+	const [data, setData] = useState({ tasks: [] });
+
+	const storage = window.localStorage;
 
 	useEffect(() => {
 		// we should use fetch here in case of server hold our data
-		let storageData = window.localStorage.getItem("data");
+		let storageData = storage.getItem("data");
 
 		if (storageData) {
-			setData(storageData);
-			setCurrentTask(JSON.parse(storageData).currentTask);
+			let parsedData = JSON.parse(storageData);
+
+			setData(parsedData);
 		}
-	}, []);
+	}, [storage]);
+
+	const dataHolder = (newData) => {
+		storage.setItem("data", JSON.stringify(newData));
+
+		setData(newData);
+	};
 
 	return (
 		<div className="home jcsb-aic wh-full">
-			<Tasks />
+			<Tasks data={data} setData={dataHolder} />
 
-			<Info />
+			<Info data={data} setData={dataHolder} />
 		</div>
 	);
 }

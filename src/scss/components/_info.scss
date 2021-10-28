@@ -1,4 +1,9 @@
 .info {
 	width: 40vw;
 	background-color: $light-grey;
+	transition: opacity ease-in-out 0.25s;
+
+	&__empty {
+		opacity: 0;
+	}
 }
