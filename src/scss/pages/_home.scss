@@ -9,17 +9,25 @@
 		@include mobile {
 			height: auto;
 			width: 100%;
+			padding: 5vw;
 		}
 	}
 
 	.tasks {
 		@include mobile {
-			max-height: 75vh;
+			max-height: 80vh;
+		}
+	}
+
+	.info {
+		@include mobile {
+			max-height: 25vh;
 		}
 	}
 
 	@include mobile {
 		flex-wrap: wrap;
 		flex-direction: column-reverse;
+		justify-content: flex-end;
 	}
 }

@@ -31,6 +31,12 @@ function Tasks({ data, setData }) {
 
 	return (
 		<div className="tasks">
+			<form onSubmit={addTask} className="tasks__form jcfs-aic wrap">
+				<input type="text" name="title" placeholder="Type here" />
+
+				<button>Add task</button>
+			</form>
+
 			{data.tasks?.map((task, index) => {
 				return (
 					<Task
@@ -41,12 +47,6 @@ function Tasks({ data, setData }) {
 					/>
 				);
 			})}
-
-			<form onSubmit={addTask} className="tasks__form jcfs-aic wrap">
-				<input type="text" name="title" placeholder="Type here" />
-
-				<button>Add task</button>
-			</form>
 		</div>
 	);
 }
